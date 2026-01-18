@@ -7,27 +7,33 @@ function Dashboard() {
     (sum, item) => sum + item.points, 0
   );
 
-  const highImpactActivities = ecoData.filter(
-    item => item.points >= 50
+  const topActivity = ecoData.reduce(
+    (max, item) => item.points > max.points ? item : max
   );
 
   return (
-    <div>
-      <h2>Dashboard</h2>
+    <>
+      <div className="stats">
+        <div>Total Eco Points: {totalPoints}</div>
+        <div>Activities: {ecoData.length}</div>
+      </div>
 
-      {ecoData.map(item => (
-        <EcoCard
-          key={item.id}
-          activity={item.activity}
-          points={item.points}
-        />
-      ))}
+      <div className="card-grid">
+        {ecoData.map(item => (
+          <EcoCard
+            key={item.id}
+            activity={item.activity}
+            points={item.points}
+          />
+        ))}
+      </div>
 
-      <h3>Total Eco Points: {totalPoints}</h3>
-      <p>
-        High Impact Activities: {highImpactActivities.length}
-      </p>
-    </div>
+      <div className="highlight">
+        <h2>🌟 Top Eco Activity</h2>
+        <p>{topActivity.activity}</p>
+        <p>{topActivity.points} Points</p>
+      </div>
+    </>
   );
 }
 
