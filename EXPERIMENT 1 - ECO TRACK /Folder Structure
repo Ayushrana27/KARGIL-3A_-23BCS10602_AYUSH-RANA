@@ -1,0 +1,15 @@
+EcoTrack/
+│
+├── src/
+│   ├── components/
+│   │   └── EcoCard.jsx
+│   │
+│   ├── data/
+│   │   └── ecoData.js
+│   │
+│   ├── pages/
+│   │   └── Dashboard.jsx
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
