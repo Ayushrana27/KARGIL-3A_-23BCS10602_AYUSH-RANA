@@ -4,8 +4,8 @@ function App() {
   return (
     <div className="app">
       <div className="header">
-        <h1>🌱 EcoTrack</h1>
-        <p>Track your eco-friendly activities</p>
+        <h1>🌍 EcoTrack</h1>
+        <p>Building a sustainable future with smart tracking</p>
       </div>
       <Dashboard />
     </div>
